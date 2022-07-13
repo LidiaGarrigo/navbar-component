@@ -3,5 +3,36 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "lidias-navigation-bar": {
+      "projectType": "library",
+      "root": "projects/lidias-navigation-bar",
+      "sourceRoot": "projects/lidias-navigation-bar/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/lidias-navigation-bar/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/lidias-navigation-bar/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/lidias-navigation-bar/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/lidias-navigation-bar/src/test.ts",
+            "tsConfig": "projects/lidias-navigation-bar/tsconfig.spec.json",
+            "karmaConfig": "projects/lidias-navigation-bar/karma.conf.js"
+          }
+        }
+      }
+    }
   }
 }
